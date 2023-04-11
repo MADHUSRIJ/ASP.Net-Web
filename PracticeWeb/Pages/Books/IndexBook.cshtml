@@ -1,0 +1,53 @@
+﻿@page
+@model PracticeWeb.Pages.Books.IndexBookModel
+@{
+
+}
+
+<br />
+<h1> BOOKS LIST </h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                BOOK CODE
+            </th>
+            <th>
+                BOOK TITLE
+            </th>
+            <th>
+                AUTHOR
+            </th>
+            <th>
+                PUBLICATION
+            </th>
+            <th>
+                PRICE
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Books book in Model.booksList)
+        {
+            <tr>
+                <td>
+                    @book.BookCode
+                </td>
+                <td>
+                    @book.BookTitle
+                </td>
+                <td>
+                    @book.Author
+                </td>
+                <td>
+                    @book.Publication
+                </td>
+                <td>
+                    @book.Price
+                </td>
+            </tr>
+        }
+        
+    </tbody>
+</table>
+
