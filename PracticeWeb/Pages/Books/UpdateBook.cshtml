@@ -1,8 +1,8 @@
 ﻿@page
-@model PracticeWeb.Pages.Books.CreateBookModel
+@model PracticeWeb.Pages.Books.UpdateBookModel
 @{
 }
-<p>Create a New Book </p>
+<p> Update Book </p>
 
 @if (Model.message.Length > 0)
 {
@@ -18,62 +18,51 @@
     </div>   
 }
 
-<form method="post" >
-    <div class="row mb-3">
-        <label class="col-sm-2 col-form-label"> Book Code </label>
-        <div class="col-sm-4">
-            <input type="text" class="form-control" value="" required name="BookCode" />
-        </div>
-    </div>
+<form method="post">
+    <input type="hidden" name="BookCode" value="@Model.book.BookCode" />
     <div class="row mb-3">
         <label class="col-sm-2 col-form-label"> Book Title </label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" value="" required name="BookTitle" />
+            <input type="text" class="form-control" value="@Model.book.BookTitle" required name="BookTitle" />
         </div>
     </div>
     <div class="row mb-3">
         <label class="col-sm-2 col-form-label"> Author </label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" value="" required name="Author" />
+            <input type="text" class="form-control" value="@Model.book.Author" required name="Author" />
         </div>
     </div>
     <div class="row mb-3">
         <label class="col-sm-2 col-form-label"> Category </label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" value="" required name="Category" />
+            <input type="text" class="form-control" value="@Model.book.Category" required name="Category" />
         </div>
     </div>
     <div class="row mb-3">
         <label class="col-sm-2 col-form-label">Publication </label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" value="" required name="Publication" />
+            <input type="text" class="form-control" value="@Model.book.Publication" required name="Publication" />
         </div>
     </div>
     <div class="row mb-3">
         <label class="col-sm-2 col-form-label"> Publication Date </label>
         <div class="col-sm-4">
-            <input type="date" class="form-control" value="" required name="PublicDate" />
+            <input type="date" class="form-control" value="@Model.book.PublicDate.ToString("yyyy-MM-dd")" required name="PublicDate" />
         </div>
     </div>
     <div class="row mb-3">
         <label class="col-sm-2 col-form-label"> Book Edition </label>
         <div class="col-sm-4">
-            <input type="number" class="form-control" value="" required name="BookEdition" />
+            <input type="number" class="form-control" value="@Model.book.BookEdition" required name="BookEdition" />
         </div>
     </div>
     <div class="row mb-3">
         <label class="col-sm-2 col-form-label"> Price </label>
         <div class="col-sm-4">
-            <input type="number" class="form-control" value="" max="2000" required name="Price" />
+            <input type="number" class="form-control" value="@Model.book.Price" max="2000" required name="Price" />
         </div>
     </div>
     <div>
         <button type="submit" class="btn-primary"> Submit </button>
     </div>
-
-    
 </form>
-
-<div>
-    <a class="btn-primary" href="\"> Cancel </a>
-</div>
