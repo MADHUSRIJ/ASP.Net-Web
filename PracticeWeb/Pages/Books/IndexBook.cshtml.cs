@@ -47,7 +47,13 @@ namespace PracticeWeb.Pages.Books
         public string BookCode { get; set; }
         public string BookTitle { get; set; }
         public string Author { get; set; }
+        public string Category { get; set; }
         public string Publication { get; set; }
-        public int Price { get; set; }
+        public DateTime PublicDate { get; set; }
+        public int BookEdition { get; set; }
+        public int Price { get; set; } 
+        public string RackNum { get; set; }
+        public DateTime DateArrival { get; set; }
+        public string SupplierId { get; set; }
     }
 }
