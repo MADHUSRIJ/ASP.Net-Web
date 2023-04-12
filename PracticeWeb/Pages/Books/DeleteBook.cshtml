@@ -1,0 +1,74 @@
+﻿@page
+@model PracticeWeb.Pages.Books.DeleteBookModel
+@{
+}
+<p> Delete Book </p>
+
+@if (Model.message.Length > 0)
+{
+    <div id="error">
+        <br><div class="alert-warning">
+
+            @Model.message
+        </div><br />
+        <button type="button" class="btn-close" data-dismiss="alert" onclick="
+            document.getElementById('error').remove();
+               ">
+        </button>
+    </div>
+}
+
+
+<div class="d-inline-block">
+    <p> Are you sure want to delete Book - @Model.book.BookCode ?</p>
+    <form method="post">
+
+        <button type="submit" class="btn btn-primary">Yes</button>
+    </form>
+    <a href="/Books/IndexBook"<button class="btn btn-danger">No</button></a>
+
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                BOOK TITLE
+            </th>
+            <th>
+                AUTHOR
+            </th>
+            <th>
+                CATEGORY
+            </th>
+            <th>
+                PUBLICATION
+            </th>
+            <th>
+                PRICE
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        
+            <tr>
+                <td>
+                @Model.book.BookTitle
+                </td>
+                <td>
+                @Model.book.Author
+                </td>
+                <td>
+                @Model.book.Category
+                </td>
+                <td>
+                @Model.book.Publication
+                </td>
+                <td>
+                @Model.book.Price
+                </td>
+            </tr>
+        
+
+    </tbody>
+</table>
